@@ -32,9 +32,9 @@ on("chat:message", function(msg){ //When there is a new chat message we will per
 
       var tok = getObj("graphic",selected[0]._id); // Gets a reference to the token selected
 
-      sendChat("AddItem", "Selected One Item");
+      var character = getObj("character",tok.get("represents")); // Gets a reference to the character associated with the token
 
-
+       sendChat(character.get("name"), "Selected One Item");
   }
 
 
